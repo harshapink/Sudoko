@@ -1,4 +1,5 @@
-/*package whatever //do not write package name here */
+/*WANT TO PRINT ODD LENGTH STRING  IN THE FORM OF X*/
+
 import java.util.*;
 import java.io.*;
 
