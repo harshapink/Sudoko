@@ -1,4 +1,5 @@
-/*package whatever //do not write package name here */
+/*WANT TO FIND CONVERT THE STRING INTO TWO DIMENSIONAL MATRIX AND HAVE TO FIND THE SUBSTRING
+THEY GAVE INPUT "WELCOMETOZOHOCORPORATION" AND HAVE TO  HAVE TO FIND THE SUBSTRING  "TOO" */
 import java.util.*;
 import java.io.*;
 
