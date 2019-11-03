@@ -5,6 +5,7 @@
   <”shaw”, “rooney”> Where the first string is “child”, second string is “Father”. 
 And given “ronaldo” we have to find his no of grandchildren Here “ronaldo” has 2 grandchildren. So our output should be 2.*/
 /*package whatever //do not write package name here */
+/*package whatever //do not write package name here */
 import java.util.*;
 import java.io.*;
 
@@ -38,7 +39,7 @@ class GFG {
 	for(Map.Entry<String,List<String>> a: m.entrySet())
 	{
 	    
-	    
+	    int key=0;
 	       if(a.getKey().equals(search))
 	        {
 	            List k=a.getValue();
@@ -48,10 +49,12 @@ class GFG {
 	     
 	        if(m.containsKey(k.get(i)))
 	        {
-	            int key=m.get(k.get(i)).size();
-	            System.out.print(key);
+	            
+	            key=key+m.get(k.get(i)).size();
+	           
 	        }
-	    }
+	    } 
+	    System.out.print(key);
 	}
 	}
 	        }
