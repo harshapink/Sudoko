@@ -4,53 +4,55 @@
   <”rooney”, “ronaldo”>
   <”shaw”, “rooney”> Where the first string is “child”, second string is “Father”. 
 And given “ronaldo” we have to find his no of grandchildren Here “ronaldo” has 2 grandchildren. So our output should be 2.*/
+/*package whatever //do not write package name here */
 import java.util.*;
 import java.io.*;
 
 class GFG {
-	public static void main (String[] args) {
-	Scanner s=new Scanner(System.in);
-	int n=s.nextInt();
-	int k1=0,k2=0,count=0;
-	String s1=s.next();
-	String s2="";
-	String a1[]=new String[n];
-	String a2[]=new String[n];
-	String a[][]=new String[n][2];
-	for(int i=0;i<n;i++)  //2D TO 1D ARRAY
+	public static void main(String args[])
 	{
-	    for(int j=0;j<2;j++)
-	    {
-	        a[i][j]=s.next();
-	        if(j==0)
-	        { 
-	            if(k1<n)
-	            a1[k1++]=a[i][j];
-	        }
-	        else{
-	            if(k2<n)
-	            a2[k2++]=a[i][j];
+		Scanner s=new Scanner(System.in);
+	int n=s.nextInt();  
+    String search=s.next();
+	HashMap<String, List<String>> m=new HashMap<String, List<String>>();
+	List<String> val=new ArrayList<String>();
+	for(int i=0;i<n;i++)
+	{
+		String s1=s.next();
+	    String s2=s.next();
+		if(m.containsKey(s2))
+		{
+			val=m.get(s2);
+			val.add(s1);
+			m.put(s2,val);
+			
+		}
+		else
+		{
+			val=new ArrayList<String>();
+			val.add(s1);
+			m.put(s2,val);
+		}
+
+	}
+	for(Map.Entry<String,List<String>> a: m.entrySet())
+	{
+	    
+	    
+	       if(a.getKey().equals(search))
+	        {
+	            List k=a.getValue();
+	        
+	        for(int i=0;i<k.size();i++)
+	        {
+	     
+	        if(m.containsKey(k.get(i)))
+	        {
+	            int key=m.get(k.get(i)).size();
+	            System.out.print(key);
 	        }
 	    }
 	}
-	
-	for(int i=0;i<n;i++)   //CHECKING FOR PARENT
-	
-	{
-	    if(a2[i].equals(s1))
-	    {
-	        s2=a1[i];
+	}
+	        }
 	    }
-	}
-	for(int i=0;i<n;i++)   //CHECKING FOR GRANDCHILDREN
-	{
-	   if(a2[i].equals(s2))
-	   {
-	       count++;
-	   }
-	}
-	System.out.println(count);
-	
-	
-	}
-}
