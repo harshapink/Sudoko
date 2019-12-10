@@ -3,27 +3,29 @@
 import java.io.*;
 import java.util.*;
 class GFG {
-    static int n=2500;
-    static void Balance(int n,int k)
+      static int n=2500;
+    static int Balance(int n,int k)
     {
         
         n=(n>1000) ? n-k:(n>500) ? n-k:(n>100)? n-k:(n>50)? n-k:(n>20)? n-k:(n>10)? n-k:-1;
-        if(n==-1)
+        return n;
+        
+    }
+	public static void main (String[] args) {
+	     
+	    Scanner s=new Scanner(System.in);
+	    for(int i=0;i<4;i++)
+	    {
+	       int k=s.nextInt();
+	       n=Balance(n,k);
+	    
+	      if(n<=0)
         {
             System.out.print("Insufficient Fund");
         }
         else{
             System.out.print("Balance"+n);
         }
-        
-    }
-	public static void main (String[] args) {
-	    
-	    Scanner s=new Scanner(System.in);
-	    for(int i=0;i<3;i++)
-	    {
-	       int k=s.nextInt();
-	       Balance(n,k);
 	    }
 	    
 	    
