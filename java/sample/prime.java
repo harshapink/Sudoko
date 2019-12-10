@@ -7,7 +7,7 @@ class GFG {
     static boolean isPrime(int n)
 {
     int flag=0;
-    for(int i=2;i<=n/2;i++)
+    for(int i=2;i<=n;i++)
 	{
 	    if(n%i==0)
 	    {
@@ -15,19 +15,28 @@ class GFG {
 	        break;
 	    }
 	}
-	if(flag==1)
+	if(flag==0)
+	  return true;
+	else
 	  return false;
-	 
-	 return true;
+
 	    
 }
-	public static void main (String[] args) {
-	int n=17;
-	String s=Integer.toString(n);
-	String s1="";
+static int check(int n,String s,String s1)
+{
+    
+	if(s.length()!=s1.length())
+	       return n;
+	else
+	      return large(n);
+}
+
+static int large(int n)
+{
+    String s=Integer.toString(n);
+	String s1=Integer.toString(n);
 	int sum=0,count=0;
-	while(s.length()!=s1.length())
-	{
+	
 	if(isPrime(n))
 	{
 	       if(sum<n)
@@ -54,5 +63,12 @@ class GFG {
 	  n++; 
 	}
 	System.out.println(n);
+}
+	public static void main (String[] args) {
+	int n=4;
+	String s=Integer.toString(n);
+	String s1=Integer.toString(n);
+	 check(n,s,s1);
+	
 	}
 }
