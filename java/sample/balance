@@ -3,11 +3,45 @@
 import java.io.*;
 import java.util.*;
 class GFG {
-      static int n=2500;
+     static int a[]={2,1,0,0,0,0};
+	 static int  n=1000*a[0]+500*a[1]+100*a[2]+50*a[3]+20*a[4]+10*a[5];
     static int Balance(int n,int k)
     {
         
-        n=(n>1000) ? n-k:(n>500) ? n-k:(n>100)? n-k:(n>50)? n-k:(n>20)? n-k:(n>10)? n-k:-1;
+        if(k>=1000 && a[0]>0)
+        {
+            n=n-k;
+            a[0]=--a[0];
+        }
+        else if(k>=500 && a[1]>0) 
+        {
+           n=n-k;
+           a[1]=--a[1]; 
+        }
+        else if(k>=100 && a[2]>0)
+        {
+           n=n-k;
+            a[2]=--a[2]; 
+        }
+        
+        else if(k>=50 && a[3]>0)
+        {
+            n=n-k;
+            a[3]=--a[3];
+        }
+        else if(k>=20 && a[4]>0)
+        {
+            n=n-k;
+            a[4]=--a[4];
+        }
+        else if(k>=10 && a[5]>0)
+        {
+            n=n-k;
+            a[5]=--a[5];
+        }
+        else{
+             System.out.println("NO MONEY");
+        }
         return n;
         
     }
@@ -18,13 +52,12 @@ class GFG {
 	    {
 	       int k=s.nextInt();
 	       n=Balance(n,k);
-	    
-	      if(n<=0)
+	      if(n<0)
         {
-            System.out.print("Insufficient Fund");
+            System.out.println("Insufficient Fund");
         }
         else{
-            System.out.print("Balance"+n);
+            System.out.println("Balance"+n);
         }
 	    }
 	    
