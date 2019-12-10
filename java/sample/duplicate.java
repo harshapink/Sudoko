@@ -1,35 +1,39 @@
-/*package whatever //do not write package name here */
-
 import java.io.*;
 import java.util.*;
 class GFG {
-      static int n=2500;
-    static void  Duplicates(int a[])
+    static void Map(HashMap<Integer,Integer> m,int a[])
     {
         for(int i=0;i<a.length;i++)
         {
-            for(int j=i+1;j<a.length;j++)
+            if(m.containsKey(a[i]))
             {
-                if(a[i]==a[j])
-                {
-                    System.out.print(a[i]);
-                }
+                m.put(a[i],m.get(a[i])+1);
+            }
+            else{
+                m.put(a[i],1);
             }
         }
-        
-    }
+        for (Map.Entry<Integer,Integer> entry : m.entrySet()) 
+        {
+            if(entry.getValue()>1)
+            {
+                System.out.println(entry.getKey());
+            }
+        }
+    } 
 	public static void main (String[] args) {
+	     ArrayList<Integer> al=new ArrayList<Integer>();
+	     HashMap<Integer,Integer> m=new HashMap<Integer,Integer>();
+	     int a[]={1,2,3,4,2,1};
+	     Map(m,a);
+	     al.add(1);
+	     al.add(2);
+	     al.add(3);
+	     al.add(2);
+	     al.add(1);
+	     al.add(4);
+	     Arraylist(al);
 	     
-	    Scanner s=new Scanner(System.in);
-	    int n=s.nextInt();
-	    int a[]=new int[n];
-	    for(int i=0;i<n;i++)
-	    {
-	        a[i]=s.nextInt();
-	    }
-	    Duplicates(a);
-	    
-	    
-	}
+	}	
     
 }
