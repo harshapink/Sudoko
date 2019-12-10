@@ -3,7 +3,7 @@
 import java.io.*;
 import java.util.*;
 class GFG {
-   
+    static int n=2500;
     static void Balance(int n,int k)
     {
         
@@ -18,7 +18,7 @@ class GFG {
         
     }
 	public static void main (String[] args) {
-	     int n=2500;
+	    
 	    Scanner s=new Scanner(System.in);
 	    for(int i=0;i<3;i++)
 	    {
