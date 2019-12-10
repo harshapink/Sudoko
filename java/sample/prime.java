@@ -1,9 +1,8 @@
-/*package whatever //do not write package name here */
-
 import java.io.*;
 
 
 class GFG {
+   
     static boolean isPrime(int n)
 {
     int flag=0;
@@ -32,6 +31,7 @@ static int check(int n,String s,String s1)
 }
 static boolean length(String s,String s1)
 {
+    int count=0;
     for(int i=0;i<s.length();i++)
 	           {
 	               for(int j=0;j<s1.length();j++)
@@ -42,7 +42,7 @@ static boolean length(String s,String s1)
 	               }
 	               }
 	           }
-	           if(count==s.length()
+	           if(count==s.length())
 	           {
 	               return true;
 	           }
@@ -54,8 +54,7 @@ static int large(int n)
 {
     String s=Integer.toString(n);
 	String s1=Integer.toString(n);
-	int sum=0,count=0;
-	
+	int sum=0;
 	if(isPrime(n))
 	{
 	       if(sum<n)
@@ -65,13 +64,11 @@ static int large(int n)
 	           if(length(s,s1))
 	           {
 	               sum=n;
-	               count=0;
+	               
 	           }
 	           }
 	       }
-	  n++; 
-	}
-	System.out.println(n);
+	  return ++n;
 }
 	public static void main (String[] args) {
 	int n=4;
