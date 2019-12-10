@@ -30,6 +30,25 @@ static int check(int n,String s,String s1)
 	else
 	      return large(n);
 }
+static boolean length(String s,String s1)
+{
+    for(int i=0;i<s.length();i++)
+	           {
+	               for(int j=0;j<s1.length();j++)
+	               {
+	               if(s.charAt(i)==s1.charAt(j))
+	               {
+	                   count=count+1;
+	               }
+	               }
+	           }
+	           if(count==s.length()
+	           {
+	               return true;
+	           }
+	           else
+	           return false;
+}
 
 static int large(int n)
 {
@@ -43,17 +62,7 @@ static int large(int n)
 	       {
 	           sum=n;
 	           s1=Integer.toString(sum);
-	           for(int i=0;i<s.length();i++)
-	           {
-	               for(int j=0;j<s1.length();j++)
-	               {
-	               if(s.charAt(i)==s1.charAt(j))
-	               {
-	                   count=count+1;
-	               }
-	               }
-	           }
-	           if(count==s.length())
+	           if(length(s,s1))
 	           {
 	               sum=n;
 	               count=0;
