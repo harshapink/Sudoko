@@ -1,3 +1,5 @@
+/*package whatever //do not write package name here */
+
 import java.io.*;
 import java.util.*;
 class GFG {
@@ -21,6 +23,27 @@ class GFG {
             }
         }
     } 
+    static void Arraylist(ArrayList<Integer> al)
+    {
+        int count=1;
+        for(int i=0;i<al.size()-1;i++)
+        {
+            int k=al.get(i);
+            al.remove(al.get(i));
+            al=al;
+            if(al.contains(k)==true)
+            {
+                count=0;
+            }
+            else{
+                 al.remove(al.get(i));
+            }
+            
+        }
+        System.out.println(al);
+        
+        
+    }
 	public static void main (String[] args) {
 	     ArrayList<Integer> al=new ArrayList<Integer>();
 	     HashMap<Integer,Integer> m=new HashMap<Integer,Integer>();
@@ -32,8 +55,11 @@ class GFG {
 	     al.add(2);
 	     al.add(1);
 	     al.add(4);
+	     al.add(4);
 	     Arraylist(al);
 	     
-	}	
+	} 
+	    
+	
     
 }
