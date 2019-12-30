@@ -8,8 +8,8 @@ class GFG {
 int sum=10;
 String s="";
 int k=0;
-int a[]={2,1,5,3};
-for(int i=1;i<(int)Math.pow(2,a.length)-1;i++)
+int a[]={2,3,5,8,10};
+for(int i=1;i<=(int)Math.pow(2,a.length)-1;i++)
 {
     
   for(int j=0;j<a.length;j++)
@@ -18,8 +18,9 @@ for(int i=1;i<(int)Math.pow(2,a.length)-1;i++)
       if((i&(1<<j))>0)
         {
             k=k+a[j];
-            s=""+a[j];
-//System.out.print(a[j]);
+            s=s+a[j];
+  //System.out.print(a[j]);
+        
           }
           
       }
@@ -28,9 +29,11 @@ for(int i=1;i<(int)Math.pow(2,a.length)-1;i++)
          System.out.println(s);
           
       }
-      s="";
       k=0;
-    //  System.out.println();
+      s="";
+
+      
+     // System.out.println();
   }
 	}
 }
