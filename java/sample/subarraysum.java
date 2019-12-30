@@ -19,7 +19,7 @@ for(int i=1;i<(int)Math.pow(2,a.length)-1;i++)
         {
             k=k+a[j];
             s=""+a[j];
-  System.out.print(a[j]);
+//System.out.print(a[j]);
           }
           
       }
