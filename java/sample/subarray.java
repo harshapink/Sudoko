@@ -13,11 +13,12 @@ class GFG {
 	  {
 	      for(int j=0;j<n;j++)
 	      {
-	          if((i&(i<<j))>0)
+	          if((i&(1<<j))>0)
 	          {
-	          System.out.println(a[i]+","+a[j]);
+	          System.out.print(a[j]);
 	          }
 	      }
+	      System.out.println();
 	  }
 	}
 }
