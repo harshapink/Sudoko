@@ -58,15 +58,40 @@ class Emp1{
 	{
 		if(p.getname().startsWith(s))
 		{
-		System.out.println(p.getname()+""+p.getage()+""+p.getmname()+""+p.getdept());
+		  display(p);
 		}
 	}
 	static void searchEndswith(Person p,String s)
 	{
 		if(p.getname().endsWith(s))
 		{
-		System.out.println(p.getname()+""+p.getage()+""+p.getmname()+""+p.getdept());
+		display(p);
 		}
+	}
+	static void contain(Person p,String s)
+	{
+		if(p.getname().equals(s))
+		{
+			display(p);
+		}
+	}
+	static void containage(Person p,int a)
+	{
+		if(p.getage()< a)
+		{
+			display(p);
+		}
+	}
+	static void search(Person p,int n)
+	{
+		switch(n)
+		{
+			case 1:searchBeginswith(p,"aji");break;
+			case 2:searchEndswith(p,"sha");break;
+			case 3:contain(p,"harshavarthini");break;
+			case 4:containage(p,25);break;
+		}
+		
 	}
 	
  public static void main(String args[])
@@ -74,7 +99,7 @@ class Emp1{
   HashMap<Integer,Person> map=new HashMap<Integer,Person>();
  // s.forEach((x)->System.out.println(x));
 String name="",mname="",dept="";
-int age=0,id=0;
+int age=0,id=0,n=0,n1=0;
 Scanner s=new Scanner(System.in);
  for(int i=0;i<2;i++)
  {
@@ -96,19 +121,22 @@ Scanner s=new Scanner(System.in);
   {
 	  //System.out.print(pp.getKey());
 	 // display(pp.getValue());
-  searchBeginswith(pp.getValue(),"aji");
-  searchEndswith(pp.getValue(),"sha");
-  }
+	 System.out.println("1.Display");
+	 System.out.println("2.Search");
+	  n=s.nextInt();
+	 switch(n)
+	 {
+		 case 1: display(pp.getValue());
+		          break;
+		 case 2: System.out.println("1.BeginsWith");
+		         System.out.println("2.EndsWith");
+		         System.out.println("3.contains");
+		         System.out.println("4.AgeLesser");
+				 n1=s.nextInt();
+		        search(pp.getValue(),n1);break;
+	 }
   
-  //Person p2=(Person)map.get(1);
-  //System.out.println(p2.getname());
-  /*ArrayList<Object> s=new ArrayList<Object>();
-  s.add(p1);
-  for(Object oo: s)
-  {
-	  Person dp=(Person)oo;
-	  System.out.println(dp.getname());
-  }*/
+  }
   }
 }
  
