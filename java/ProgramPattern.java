@@ -30,3 +30,24 @@ class A
 	}
 }
  
+String s="ajith";
+		int n=s.length();
+		  int k=0;
+		  int l=n-1;
+		  for(int i=0;i<n;i++)
+		  {
+			  for(int j=0;j<n;j++)
+			  {
+				   if(j==k || j==l)
+				  {
+					  System.out.print(s.charAt(j));
+				  }
+				  else{
+					  System.out.print(" ");
+				  }
+			  }
+			  k++;
+			  l--;
+			  System.out.println();
+		  
+		  }
